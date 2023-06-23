@@ -1,9 +1,8 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-
-const rootReducer = combineReducers({});
+import { configureStore } from "@reduxjs/toolkit";
+import teamReducer from "./team";
 
 export function createStore() {
   return configureStore({
-    reducer: rootReducer
+    reducer: teamReducer
   });
 }
