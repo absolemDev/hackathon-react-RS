@@ -3,6 +3,7 @@ import { useRoutes } from "react-router-dom";
 import routes from "./routes";
 import { useDispatch } from "react-redux";
 import { loadTeamList } from "./store/team";
+import NavBar from "./components/ui/navbar";
 
 function App() {
   const elements = useRoutes(routes());
@@ -12,7 +13,12 @@ function App() {
     dispatch(loadTeamList());
   }, []);
 
-  return <>{elements}</>;
+  return (
+    <>
+      <NavBar />
+      {elements}
+    </>
+  );
 }
 
 export default App;
