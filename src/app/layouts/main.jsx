@@ -1,15 +1,11 @@
 import React from "react";
-import Btn from "../component/btn";
+import ProgressBar from "../component/progressBar";
 
 const MainLayout = () => {
-  const handleClick = () => {
-    console.log("click");
-  };
-
   return (
     <>
       <h2>Main Layout</h2>
-      <Btn label={"кнопка"} onClick={handleClick} color={0} />
+      <ProgressBar label={"html"} percent={10} />
     </>
   );
 };

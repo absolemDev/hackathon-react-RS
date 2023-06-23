@@ -2,27 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Btn({ color, onClick, label }) {
-  const colorArr = [
-    "primary",
-    "secondary",
-    "success",
-    "danger",
-    "warning",
-    "info",
-    "light",
-    "dark",
-    "link",
-    "outline-primary",
-    "outline-secondary",
-    "outline-success",
-    "outline-danger",
-    "outline-warning",
-    "outline-info",
-    "outline-dark"
-  ];
-
   const renderColor = () => {
-    return `btn btn-${colorArr[color]}`;
+    return `btn btn-${color}`;
   };
 
   return (
@@ -33,7 +14,7 @@ function Btn({ color, onClick, label }) {
 }
 
 Btn.propTypes = {
-  color: PropTypes.number,
+  color: PropTypes.string,
   onClick: PropTypes.func,
   label: PropTypes.string
 };
