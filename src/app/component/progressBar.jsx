@@ -6,7 +6,7 @@ function ProgressBar({ percent, label }) {
     <>
       <div className="text-uppercase fw-bold pb-1">{label}</div>
       <div
-        className="progress"
+        className="progress fw-bold"
         role="progressbar"
         aria-label="Success example"
         aria-valuenow="25"
@@ -16,7 +16,9 @@ function ProgressBar({ percent, label }) {
         <div
           className="progress-bar bg-success"
           style={{ width: `${percent}%` }}
-        ></div>
+        >
+          {`${percent}%`}
+        </div>
       </div>
     </>
   );
