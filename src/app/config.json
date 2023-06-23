@@ -1,4 +1,3 @@
 {
-  "apiEndpoint": "https://hackathon-react-rs-default-rtdb.europe-west1.firebasedatabase.app/",
-  "isFireBase": true
+  "apiEndpoint": "https://hackathon-react-rs-default-rtdb.europe-west1.firebasedatabase.app/"
 }
