@@ -12,12 +12,7 @@ function App() {
     dispatch(loadTeamList());
   }, []);
 
-  return (
-    <>
-      <h1>HACKATHON REACT</h1>
-      {elements}
-    </>
-  );
+  return <>{elements}</>;
 }
 
 export default App;
