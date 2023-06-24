@@ -17,34 +17,39 @@ function UserPage() {
   if (isLoading) return "Loading...";
 
   return (
-    <div className="container text-center text-light">
-      <div className="row pt-3">
-        <div className="col-md-4">
-          <img
-            style={{
-              objectFit: "cover",
-              width: "100%",
-              height: "550px",
-              borderRadius: "1%"
-            }}
-            src={member.photo}
-            onClick={handleClick}
-            alt="..."
-          />
-        </div>
-        <div className="col">
-          <div className="text-end">
+    <div className="row">
+      <div className="container-fluid">
+        <div className="row p-3">
+          <div className="col-md-5">
+            <img
+              className="w-100"
+              style={{
+                backgroundSize: "cover",
+                height: "550px",
+                borderRadius: "1%"
+              }}
+              src={member.photo}
+              onClick={handleClick}
+              alt={member.name}
+            />
+          </div>
+          <div className="col text-light text-end">
             <div className="fs-1">{member.name}</div>
             <div className="fs-5">{`${member.age} лет`}</div>
-            <div className="fs-3 m-2">{member.about}</div>
-
-            {Object.keys(member.technologies).map((t) => (
-              <ProgressBar key={t} label={t} percent={member.technologies[t]} />
-            ))}
-            <div className="mt-2 p-2">
-              {Object.keys(member.social).map((s) => (
-                <SocialLink key={s} nick={nick} name={s} width="65px" />
+            <div className="fs-5 m-2 pb-2">{member.about}</div>
+            <div className="col">
+              {Object.keys(member.technologies).map((t) => (
+                <ProgressBar
+                  key={t}
+                  label={t}
+                  percent={member.technologies[t]}
+                />
               ))}
+              <div className="mt-2 p-2">
+                {Object.keys(member.social).map((s) => (
+                  <SocialLink key={s} nick={nick} name={s} width="65px" />
+                ))}
+              </div>
             </div>
           </div>
         </div>
