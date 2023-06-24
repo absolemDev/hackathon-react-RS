@@ -38,7 +38,7 @@ export const loadTeamList = () => async (dispatch) => {
 };
 
 export const getTeam = () => (state) => state.members;
-export const getTeamLoadingStatus = () => (state) => state.team.isLoading;
+export const getTeamLoadingStatus = () => (state) => state.isLoading;
 export const getTeamMember = (nick) => (state) => {
   if (state.members) {
     return state.members.find((m) => m.nick === nick);

@@ -1,17 +1,17 @@
 export const aboutTeam = [
   {
-    title: "First slide label",
+    title: "О сайте",
     content:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam reprehenderit, nostrum deserunt magnam facere illum reiciendis suscipit ad nisi dicta totam. Laboriosam facere quasi assumenda."
+      'Этот сайт разработан группой молодых и перспективных Frontend-разработчиков, c целью продемонстрировать свои навыки в этом направлении. При разработке были использованы таких технологий как: HTML, CSS, Bootstrap, React, Redux, Redux Toolkit, Firebase, Git. Данный проект реализован в рамках участия в групповой работе "Hackathon React" студентами курса "Junior Fronted Developer" от "Result School".'
   },
   {
-    title: "First slide label",
+    title: "О команде",
     content:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam reprehenderit, nostrum deserunt magnam facere illum reiciendis suscipit ad nisi dicta totam. Laboriosam facere quasi assumenda."
+      "Нашу команду объединяет любовь к Web-разработке, получение удовольствия от процесса, бессонные ночи и полная вовлеченность. Всё это помогает реализовывать себя, ставить перед собой задачи освоения новых технологий, преодолевать преграды и трудности. Что в будущем, для каждого из нас, поспособствует улучшению качества жизни и сделает мир лучше!!! "
   },
   {
-    title: "First slide label",
+    title: "Наши цели",
     content:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam reprehenderit, nostrum deserunt magnam facere illum reiciendis suscipit ad nisi dicta totam. Laboriosam facere quasi assumenda."
+      "Мы преследуем цель зарекомендовать себя как опытные и надежные Web-разработчики. Закрепить и улучшить свои навыки при работе над собственными проектами. Пройти путь от Junior до Teamlead и выше. Сделать Frontend-разработку не просто профессией мечты, а образом жизни. По окончанию курса планируем ворваться в мир IT на полных парусах!!!"
   }
 ];

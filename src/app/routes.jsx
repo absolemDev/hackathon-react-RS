@@ -8,11 +8,10 @@ const routes = (isLoggedIn, location) => [
   {
     path: "",
     element: <MainLayout />,
-    children: [{ path: "", element: <MainPage /> }]
-  },
-  {
-    path: "favorites",
-    element: <FavoritesPage />
+    children: [
+      { path: "", element: <MainPage /> },
+      { path: "favorites", element: <FavoritesPage /> }
+    ]
   },
   {
     path: "members",

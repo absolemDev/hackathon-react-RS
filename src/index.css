@@ -16,7 +16,8 @@ code {
   height: 100vh;
 }
 
-header {
+header,
+footer {
   background: linear-gradient(
     to bottom,
     rgb(90, 0, 110) 0%,
@@ -25,10 +26,14 @@ header {
   );
 }
 
-
 .carousel-item p {
   color: white;
   height: 15rem;
+  text-align: justify;
+}
+
+.carousel-caption h5 {
+  top: -13rem;
 }
 
 .navbar-wrapper {
@@ -37,11 +42,13 @@ header {
   padding: 0 1rem;
   background-color: rgb(90, 0, 110);
 }
+
 .navlink-wrapper {
   display: flex;
   font-size: 1.125rem;
   height: 100%;
 }
+
 .navlink-item {
   display: flex;
   align-items: center;
@@ -49,9 +56,18 @@ header {
   color: #fff;
   text-decoration: none;
 }
+
 .navlink-item:hover {
   text-decoration: underline;
 }
+
 .navlink-item-main {
   font-weight: 700;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 }

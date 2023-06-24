@@ -30,9 +30,9 @@ const Slider = ({ sliders }) => {
               key={index}
               className={`carousel-item${index === 0 ? " active" : ""}`}
             >
-              <p className="m-5">{item.content}</p>
+              <p className="m-5 mb-0">{item.content}</p>
               <div className="carousel-caption d-none d-md-block">
-                <h5>{item.title}</h5>
+                <h5 className="position-relative">{item.title}</h5>
               </div>
             </div>
           ))}
