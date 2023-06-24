@@ -30,12 +30,8 @@ const FavoritesPage = () => {
   if (isLoading) return "Loading...";
 
   return (
-    <div className="d-flex flex-column h-100">
-      <header className="py-3">
-        <h1 className="text-center text-light">Избранные</h1>
-      </header>
-      <main className="bg-dark flex-fill">
-        {favorites.length > 0 ? (
+    <div className="flex-fill">
+      {favorites.length > 0 ? (
           <ul className="cards-container">
             {favorites.map((member) => (
               <li key={member.nick} className="m-4">
@@ -61,7 +57,6 @@ const FavoritesPage = () => {
             <h3 className="text-light">Нет избранных</h3>
           </div>
         )}
-      </main>
     </div>
   );
 };
