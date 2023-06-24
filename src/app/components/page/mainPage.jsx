@@ -1,9 +1,11 @@
 import React from "react";
+import Slider from "../common/slider";
+import { aboutTeam } from "../../content/aboutTeam";
 
 const MainPage = () => {
   return (
     <>
-      <p className="text-light">Main page</p>
+      <Slider sliders={aboutTeam} />
     </>
   );
 };
