@@ -25,7 +25,6 @@ header {
   );
 }
 
-
 .carousel-item p {
   color: white;
   height: 15rem;
@@ -54,4 +53,11 @@ header {
 }
 .navlink-item-main {
   font-weight: 700;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 }
