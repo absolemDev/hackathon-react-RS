@@ -8,7 +8,6 @@ import Btn from "../common/btn";
 const FavoritesPage = () => {
   const team = useSelector(getTeam());
   const isLoading = useSelector(getTeamLoadingStatus());
-
   const [isUpdated, setUpdated] = useState(false);
   const [favorites, setFavorites] = useState([]);
 
@@ -35,13 +34,7 @@ const FavoritesPage = () => {
         <ul className="cards-container">
           {favorites.map((member) => (
             <li key={member.nick} className="m-4">
-              <UserCard
-                nick={member.nick}
-                label={member.name}
-                age={member.age}
-                src={member.photo}
-              />
-
+              <UserCard {...member} />
               <div className="mt-3 d-flex justify-content-center">
                 <Btn
                   color="danger"
