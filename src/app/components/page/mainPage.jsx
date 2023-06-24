@@ -11,7 +11,6 @@ import localStorageService from "../../services/localStorage.service";
 const MainPage = () => {
   const team = useSelector(getTeam());
   if (!team) return "Loading...";
-
   return (
     <>
       <Slider sliders={aboutTeam} />
