@@ -32,31 +32,31 @@ const FavoritesPage = () => {
   return (
     <div className="flex-fill">
       {favorites.length > 0 ? (
-          <ul className="cards-container">
-            {favorites.map((member) => (
-              <li key={member.nick} className="m-4">
-                <UserCard
-                  nick={member.nick}
-                  label={member.name}
-                  age={member.age}
-                  src={member.photo}
-                />
+        <ul className="cards-container">
+          {favorites.map((member) => (
+            <li key={member.nick} className="m-4">
+              <UserCard
+                nick={member.nick}
+                label={member.name}
+                age={member.age}
+                src={member.photo}
+              />
 
-                <div className="mt-3 d-flex justify-content-center">
-                  <Btn
-                    color="danger"
-                    onClick={() => handleRemoveFavorite(member.nick)}
-                    label="Убрать из избранных"
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <div className="h-100 d-flex justify-content-center align-items-center">
-            <h3 className="text-light">Нет избранных</h3>
-          </div>
-        )}
+              <div className="mt-3 d-flex justify-content-center">
+                <Btn
+                  color="danger"
+                  onClick={() => handleRemoveFavorite(member.nick)}
+                  label="Убрать из избранных"
+                />
+              </div>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className="h-100 d-flex justify-content-center align-items-center">
+          <h3 className="text-light">Нет избранных</h3>
+        </div>
+      )}
     </div>
   );
 };
