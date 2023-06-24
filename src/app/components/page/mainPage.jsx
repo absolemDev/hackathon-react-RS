@@ -17,7 +17,7 @@ const MainPage = () => {
       <ul className="cards-container">
         {team.map((member) => (
           <li key={member.nick} className="m-4">
-            <UserCard label={member.name} age={member.age} src={member.photo} />
+            <UserCard {...member} />
 
             {/* Кнопка добавления в избранное для тестирования */}
             <div className="mt-3 d-flex justify-content-center">
