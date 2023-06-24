@@ -24,3 +24,8 @@ header {
     rgb(10, 110, 240) 100%
   );
 }
+
+.carousel-item p {
+  color: white;
+  height: 15rem;
+}
