@@ -16,7 +16,8 @@ code {
   height: 100vh;
 }
 
-header {
+header,
+footer {
   background: linear-gradient(
     to bottom,
     rgb(90, 0, 110) 0%,

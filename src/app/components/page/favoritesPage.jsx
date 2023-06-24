@@ -18,32 +18,27 @@ const FavoritesPage = () => {
   };
 
   return (
-    <div className="d-flex flex-column h-100">
-      <header className="py-3">
-        <h1 className="text-center text-light">Избранные</h1>
-      </header>
-      <main className="bg-dark flex-fill">
-        <ul className="cards-container">
-          {filteredTeam.map((member) => (
-            <li key={member.nick} className="m-4">
-              <UserCard
-                nick={member.nick}
-                label={member.name}
-                age={member.age}
-                src={member.photo}
-              />
+    <div className="bg-dark flex-fill">
+      <ul className="cards-container">
+        {filteredTeam.map((member) => (
+          <li key={member.nick} className="m-4">
+            <UserCard
+              nick={member.nick}
+              label={member.name}
+              age={member.age}
+              src={member.photo}
+            />
 
-              <div className="mt-3 d-flex justify-content-center">
-                <Btn
-                  color="danger"
-                  onClick={() => handleRemoveFavorite(member.nick)}
-                  label="Убрать из избранных"
-                />
-              </div>
-            </li>
-          ))}
-        </ul>
-      </main>
+            <div className="mt-3 d-flex justify-content-center">
+              <Btn
+                color="danger"
+                onClick={() => handleRemoveFavorite(member.nick)}
+                label="Убрать из избранных"
+              />
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
