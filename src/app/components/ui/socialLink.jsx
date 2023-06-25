@@ -8,7 +8,7 @@ const SocialLink = ({ name, link, width }) => {
       <Link to={link}>
         <img
           className="mx-2"
-          src={`/assets/img/${name}.svg`}
+          src={`../assets/img/${name}.svg`}
           width={width}
           alt={`${name} link`}
         />
