@@ -11,9 +11,10 @@ export function getFavorites() {
 }
 
 export function removeFavorite(nick) {
+  const favorites = JSON.parse(getFavorites()) || [];
   localStorage.setItem(
     "favorites",
-    JSON.stringify(JSON.parse(getFavorites()).filter((i) => i !== nick))
+    JSON.stringify(favorites.filter((i) => i !== nick))
   );
 }
 
