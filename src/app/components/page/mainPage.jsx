@@ -1,6 +1,4 @@
 import React from "react";
-import Slider from "../common/slider";
-import { aboutTeam } from "../../content/aboutTeam";
 import UserCard from "../ui/userCard";
 import { useSelector } from "react-redux";
 import { getTeam } from "../../store/team";
@@ -12,10 +10,9 @@ const MainPage = () => {
   if (!team) return "Loading...";
   return (
     <>
-      <Slider sliders={aboutTeam} />
-      <ul className="cards-container">
+      <div className="cards-container">
         {team.map((member) => (
-          <li key={member.nick} className="m-4">
+          <div key={member.nick} className="m-4">
             <UserCard {...member} />
 
             <div className="mt-3 d-flex justify-content-center">
@@ -25,9 +22,9 @@ const MainPage = () => {
                 label="В избранные"
               />
             </div>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </>
   );
 };

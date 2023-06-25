@@ -15,8 +15,18 @@ function App() {
 
   return (
     <>
-      <NavBar />
-      {elements}
+      <header>
+        <h1 className="text-center text-light py-2">Hackathon React</h1>
+        <NavBar />
+      </header>
+      <main className="bg-dark py-5">
+        <div className="content-container mx-auto">{elements}</div>
+      </main>
+      <footer>
+        <p className="text-light">
+          Junior Fronted Developer. 8 поток. 82 группа. Team 1
+        </p>
+      </footer>
     </>
   );
 }

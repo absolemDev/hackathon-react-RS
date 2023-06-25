@@ -4,18 +4,18 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getTeamMember } from "../../store/team";
 
-const SocialLink = ({ nick, name, width }) => {
+const SocialLink = ({ nick, social, width }) => {
   const member = useSelector(getTeamMember(nick));
   if (!member) return "Loading...";
 
   return (
     <>
-      <Link to={member.social[name]}>
+      <Link to={member.social[social]}>
         <img
-          className="mx-4"
-          src={`/assets/img/${name}.svg`}
+          className="mx-2"
+          src={`/assets/img/${social}.svg`}
           width={width}
-          alt={`${name} link`}
+          alt={`${social} link`}
         />
       </Link>
     </>
@@ -24,7 +24,7 @@ const SocialLink = ({ nick, name, width }) => {
 
 SocialLink.propTypes = {
   nick: PropTypes.string,
-  name: PropTypes.string,
+  social: PropTypes.string,
   width: PropTypes.string
 };
 
