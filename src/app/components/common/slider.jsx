@@ -6,7 +6,9 @@ const Slider = ({ sliders }) => {
   const carouselElement = useRef(null);
   useEffect(() => {
     const carousel = new Carousel(carouselElement.current);
-    console.log(carousel);
+    return () => {
+      carousel.dispose();
+    };
   }, []);
   return (
     <div className="carousel-wrapper shadow-lg rounded">
