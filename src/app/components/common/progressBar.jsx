@@ -14,7 +14,7 @@ function ProgressBar({ percent, label }) {
         aria-valuemax="100"
       >
         <div
-          className="progress-bar bg-success"
+          className="progress-bar progress-bar-striped progress-bar-animated bg-success"
           style={{ width: `${percent}%` }}
         >
           {`${percent}%`}
