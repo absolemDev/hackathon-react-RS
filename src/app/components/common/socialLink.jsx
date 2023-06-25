@@ -12,6 +12,7 @@ const SocialLink = ({ nick, name, width }) => {
     <>
       <Link to={member.social[name]}>
         <img
+          className="mx-4"
           src={`/assets/img/${name}.svg`}
           width={width}
           alt={`${name} link`}
