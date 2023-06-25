@@ -11,7 +11,13 @@ const routes = (isLoggedIn, location) => [
     children: [
       { path: "", element: <MainPage /> },
       { path: "favorites", element: <FavoritesPage /> },
-      { path: "members/:nick", element: <UserPage /> }
+      {
+        path: "members",
+        children: [
+          { path: "", element: <MainPage /> },
+          { path: ":nick", element: <UserPage /> }
+        ]
+      }
     ]
   },
   {

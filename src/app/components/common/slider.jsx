@@ -9,7 +9,7 @@ const Slider = ({ sliders }) => {
     console.log(carousel);
   }, []);
   return (
-    <div className="col-8 mx-auto my-5 shadow-lg rounded">
+    <div className="carousel-wrapper shadow-lg rounded">
       <div id="carousel" className="carousel slide" ref={carouselElement}>
         <div className="carousel-indicators">
           {sliders.map((item, index) => (

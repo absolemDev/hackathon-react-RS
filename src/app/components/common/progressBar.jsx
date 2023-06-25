@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function ProgressBar({ percent, label }) {
   return (
-    <>
+    <div className="mt-2">
       <div className="text-uppercase fw-bold pb-1">{label}</div>
       <div
         className="progress fw-bold"
@@ -20,7 +20,7 @@ function ProgressBar({ percent, label }) {
           {`${percent}%`}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

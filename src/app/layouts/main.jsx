@@ -1,21 +1,16 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import Slider from "../components/common/slider";
+import { aboutTeam } from "../content/aboutTeam";
+import Breadcrumb from "../components/ui/breadcrumb";
 
 const MainLayout = () => {
   return (
-    <div className="d-flex flex-column h-100">
-      <header className="py-3">
-        <h1 className="text-center text-light">Hackathon React</h1>
-      </header>
-      <main className="bg-dark flex-fill">
-        <Outlet />
-      </main>
-      <footer>
-        <p className="text-light">
-          Junior Fronted Developer. 8 поток. 82 группа. Team 1
-        </p>
-      </footer>
-    </div>
+    <>
+      <Slider sliders={aboutTeam} />
+      <Breadcrumb />
+      <Outlet />
+    </>
   );
 };
 
