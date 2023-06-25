@@ -1,14 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Navigate, useParams } from "react-router-dom";
 import { getTeamLoadingStatus, getTeamMember } from "../../store/team";
 import ProgressBar from "../common/progressBar";
 import SocialLink from "../common/socialLink";
+import { getAge } from "../../utils/getAge";
+import localStorageService from "../../services/localStorage.service";
+import FavoriteButton from "../common/favoriteButton";
 
 function UserPage() {
   const { nick } = useParams();
   const member = useSelector(getTeamMember(nick));
   const isLoading = useSelector(getTeamLoadingStatus());
+  const favorites = JSON.parse(localStorageService.getFavorites()) || [];
+  const [isFavorite, setIsFavorite] = useState(favorites.includes(nick));
+
+  const handleFavorite = () => {
+    if (favorites.includes(nick)) {
+      localStorageService.removeFavorite(nick);
+      setIsFavorite(false);
+    } else {
+      localStorageService.setFavorite(nick);
+      setIsFavorite(true);
+    }
+  };
 
   if (isLoading) return "Loading...";
   if (!isLoading && !member) return <Navigate to="/members" />;
@@ -35,8 +50,14 @@ function UserPage() {
         </div>
         <div className="col">
           <div>
-            <div className="fs-2">{member.name}</div>
-            <div className="fs-5">{`${member.age} лет`}</div>
+            <div className="d-flex">
+              <div className="fs-2">{member.name}</div>
+              <FavoriteButton
+                status={isFavorite}
+                onClick={() => handleFavorite()}
+              />
+            </div>
+            <div className="fs-5">{`${getAge(member.age)}`}</div>
             <div className="fs-4 my-3">{member.about}</div>
             <div>
               <p className="fs-5 fw-bold m-0">Владение технологиями:</p>
