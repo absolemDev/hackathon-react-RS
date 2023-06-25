@@ -15,7 +15,6 @@ const MainPage = () => {
           <div key={member.nick} className="m-4">
             <UserCard {...member} />
 
-            {/* Кнопка добавления в избранное для тестирования */}
             <div className="mt-3 d-flex justify-content-center">
               <Btn
                 color="primary"
