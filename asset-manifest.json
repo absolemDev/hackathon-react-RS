@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/hackathon-react-RS/static/css/main.8ab71af7.css",
+    "main.js": "/hackathon-react-RS/static/js/main.02839bbe.js",
+    "index.html": "/hackathon-react-RS/index.html",
+    "main.8ab71af7.css.map": "/hackathon-react-RS/static/css/main.8ab71af7.css.map",
+    "main.02839bbe.js.map": "/hackathon-react-RS/static/js/main.02839bbe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8ab71af7.css",
+    "static/js/main.02839bbe.js"
+  ]
+}
