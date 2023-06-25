@@ -7,7 +7,7 @@ const Breadcrumb = () => {
   const { nick } = useParams();
   const member = useSelector(getTeamMember(nick));
   return (
-    <nav aria-label="breadcrumb" className="mt-3">
+    <nav aria-label="breadcrumb" className="mt-3 ps-2">
       <ol className="breadcrumb fs-5">
         <li
           className={`breadcrumb-item text-white${

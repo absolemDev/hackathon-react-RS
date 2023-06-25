@@ -29,7 +29,7 @@ const UserCard = ({ name, age, nick, photo, badges }) => {
         }}
         alt="user image"
       />
-      <div className="card-body position-absolute p-0">
+      <div className="card-body member-badges position-absolute p-0">
         {badges.map((b, i) => (
           <Badge key={i} color={b.color} content={b.label} />
         ))}

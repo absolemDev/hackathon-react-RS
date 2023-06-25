@@ -79,3 +79,7 @@ footer {
 .breadcrumb-item::before {
   color: white !important;
 }
+
+.member-badges {
+  top: 17rem;
+}

@@ -14,7 +14,7 @@ const FavoritesPage = () => {
   useEffect(() => {
     if (!isLoading) {
       const filteredTeam = team.filter((member) =>
-        localStorageService.getFavorites().includes(member.nick)
+        (localStorageService.getFavorites() || []).includes(member.nick)
       );
       setFavorites(filteredTeam);
       setUpdated(false);
@@ -47,7 +47,7 @@ const FavoritesPage = () => {
         </ul>
       ) : (
         <div className="h-100 d-flex justify-content-center align-items-center">
-          <h3 className="text-light">Нет избранных</h3>
+          <h3 className="text-light">Список избранных пуст</h3>
         </div>
       )}
     </div>
