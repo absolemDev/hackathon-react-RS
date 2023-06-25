@@ -19,7 +19,7 @@ const FavoritesPage = () => {
       setFavorites(filteredTeam);
       setUpdated(false);
     }
-  }, [isUpdated]);
+  }, [isUpdated, isLoading]);
 
   const handleRemoveFavorite = (nick) => {
     localStorageService.removeFavorite(nick);
@@ -29,7 +29,7 @@ const FavoritesPage = () => {
   if (isLoading) return "Loading...";
 
   return (
-    <div className="flex-fill">
+    <div className="flex-fill h-100">
       {favorites.length > 0 ? (
         <ul className="cards-container">
           {favorites.map((member) => (

@@ -10,8 +10,8 @@ const MainLayout = () => {
       <main className="bg-dark flex-fill">
         <Outlet />
       </main>
-      <footer>
-        <p className="text-light">
+      <footer className="ps-3 py-2 d-flex align-items-center">
+        <p className="text-light mb-0">
           Junior Fronted Developer. 8 поток. 82 группа. Team 1
         </p>
       </footer>
