@@ -1,13 +1,85 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-width: 40rem;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#root {
+  height: 100vh;
+}
+
+header {
+  background: linear-gradient(
+    to bottom,
+    rgb(90, 0, 110) 0%,
+    rgb(30, 90, 150) 50%,
+    rgb(10, 110, 240) 100%
+  );
+}
+
+.content-container {
+  max-width: 60rem;
+}
+
+.carousel-item p {
+  color: white;
+  height: 15rem;
+  text-align: justify;
+}
+
+.carousel-caption h5 {
+  top: -13rem;
+}
+
+.navbar-wrapper {
+  width: 100%;
+  height: 50px;
+  padding: 0 1rem;
+}
+
+.navlink-wrapper {
+  display: flex;
+  font-size: 1.125rem;
+  height: 100%;
+}
+
+.navlink-item {
+  display: flex;
+  align-items: center;
+  margin: 0 0.75rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navlink-item:hover {
+  text-decoration: underline;
+}
+
+.navlink-item-main {
+  font-weight: 700;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.breadcrumb a,
+.breadcrumb-item::before {
+  color: white !important;
+}
+
+.member-badges {
+  top: 17rem;
 }
