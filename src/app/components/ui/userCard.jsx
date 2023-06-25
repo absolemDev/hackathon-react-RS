@@ -2,8 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { getAge } from "../../utils/getAge";
 import { useNavigate } from "react-router-dom";
+import Badge from "../common/badge";
 
-const UserCard = ({ name, age, nick, photo }) => {
+const UserCard = ({ name, age, nick, photo, badges }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -12,7 +13,7 @@ const UserCard = ({ name, age, nick, photo }) => {
 
   return (
     <div
-      className="card"
+      className="card position-relative"
       style={{ width: "18rem" }}
       role="button"
       onClick={handleClick}
@@ -28,6 +29,11 @@ const UserCard = ({ name, age, nick, photo }) => {
         }}
         alt="user image"
       />
+      <div className="card-body position-absolute p-0">
+        {badges.map((b, i) => (
+          <Badge key={i} color={b.color} content={b.label} />
+        ))}
+      </div>
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
         <h6 className="card-title">{`Возраст: ${getAge(age)}`}</h6>
@@ -40,7 +46,8 @@ UserCard.propTypes = {
   name: PropTypes.string,
   age: PropTypes.number,
   photo: PropTypes.string,
-  nick: PropTypes.string
+  nick: PropTypes.string,
+  badges: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default UserCard;

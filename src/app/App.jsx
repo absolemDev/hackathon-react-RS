@@ -14,12 +14,12 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className="d-flex flex-column h-100">
       <header>
         <h1 className="text-center text-light py-2">Hackathon React</h1>
         <NavBar />
       </header>
-      <main className="bg-dark py-5">
+      <main className="bg-dark py-5 flex-grow-1">
         <div className="content-container mx-auto">{elements}</div>
       </main>
       <footer>
@@ -27,7 +27,7 @@ function App() {
           Junior Fronted Developer. 8 поток. 82 группа. Team 1
         </p>
       </footer>
-    </>
+    </div>
   );
 }
 

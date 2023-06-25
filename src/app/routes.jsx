@@ -3,14 +3,14 @@ import MainLayout from "./layouts/main";
 import MainPage from "./components/page/mainPage";
 import FavoritesPage from "./components/page/favoritesPage";
 import UserPage from "./components/page/userPage";
+import FavoritesLayout from "./layouts/favorites";
 
-const routes = (isLoggedIn, location) => [
+const routes = () => [
   {
     path: "",
     element: <MainLayout />,
     children: [
       { path: "", element: <MainPage /> },
-      { path: "favorites", element: <FavoritesPage /> },
       {
         path: "members",
         children: [
@@ -18,6 +18,14 @@ const routes = (isLoggedIn, location) => [
           { path: ":nick", element: <UserPage /> }
         ]
       }
+    ]
+  },
+  {
+    path: "favorites",
+    element: <FavoritesLayout />,
+    children: [
+      { path: "", element: <FavoritesPage /> },
+      { path: "*", element: <Navigate to="/favorites" /> }
     ]
   },
   {

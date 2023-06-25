@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { getTeamLoadingStatus, getTeamMember } from "../../store/team";
 import ProgressBar from "../common/progressBar";
 import SocialLink from "../common/socialLink";
@@ -11,6 +11,7 @@ function UserPage() {
   const isLoading = useSelector(getTeamLoadingStatus());
 
   if (isLoading) return "Loading...";
+  if (!isLoading && !member) return <Navigate to="/members" />;
 
   return (
     <div className="container text-light">
