@@ -1,21 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { getTeamMember } from "../../store/team";
 
-const SocialLink = ({ nick, social, width }) => {
-  const member = useSelector(getTeamMember(nick));
-  if (!member) return "Loading...";
-
+const SocialLink = ({ name, link, width }) => {
   return (
     <>
-      <Link to={member.social[social]}>
+      <Link to={link}>
         <img
           className="mx-2"
-          src={`/assets/img/${social}.svg`}
+          src={`/assets/img/${name}.svg`}
           width={width}
-          alt={`${social} link`}
+          alt={`${name} link`}
         />
       </Link>
     </>
@@ -23,8 +18,8 @@ const SocialLink = ({ nick, social, width }) => {
 };
 
 SocialLink.propTypes = {
-  nick: PropTypes.string,
-  social: PropTypes.string,
+  name: PropTypes.string,
+  link: PropTypes.string,
   width: PropTypes.string
 };
 

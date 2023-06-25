@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-width: 40rem;
 }
 
 code {
@@ -16,8 +17,7 @@ code {
   height: 100vh;
 }
 
-header,
-footer {
+header {
   background: linear-gradient(
     to bottom,
     rgb(90, 0, 110) 0%,

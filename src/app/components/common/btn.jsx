@@ -2,18 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Btn({ color, onClick, label, children }) {
-  const renderColor = () => {
-    return `btn btn-${color}`;
-  };
-
   return (
-    <button type="button" className={renderColor()} onClick={onClick}>
+    <button type="button" className={`btn btn-${color}`} onClick={onClick}>
       {children || label}
     </button>
   );
 }
 
 Btn.defaultProps = {
+  color: "primary",
   label: "Кнопка"
 };
 

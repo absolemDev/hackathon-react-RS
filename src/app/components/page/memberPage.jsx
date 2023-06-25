@@ -1,30 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { Navigate, useParams } from "react-router-dom";
 import { getTeamLoadingStatus, getTeamMember } from "../../store/team";
 import ProgressBar from "../common/progressBar";
 import SocialLink from "../ui/socialLink";
 import { getAge } from "../../utils/getAge";
-import localStorageService from "../../services/localStorage.service";
 import FavoriteButton from "../common/favoriteButton";
 import Badge from "../common/badge";
 
-function UserPage() {
+function MemberPage() {
   const { nick } = useParams();
   const member = useSelector(getTeamMember(nick));
   const isLoading = useSelector(getTeamLoadingStatus());
-  const favorites = JSON.parse(localStorageService.getFavorites()) || [];
-  const [isFavorite, setIsFavorite] = useState(favorites.includes(nick));
-
-  const handleFavorite = () => {
-    if (favorites.includes(nick)) {
-      localStorageService.removeFavorite(nick);
-      setIsFavorite(false);
-    } else {
-      localStorageService.setFavorite(nick);
-      setIsFavorite(true);
-    }
-  };
 
   if (isLoading) return "Loading...";
   if (!isLoading && !member) return <Navigate to="/members" />;
@@ -44,8 +31,13 @@ function UserPage() {
             alt="..."
           />
           <div className="text-center py-2 mb-3">
-            {Object.keys(member.social).map((s) => (
-              <SocialLink key={s} nick={nick} social={s} width="35px" />
+            {member.social.map((s) => (
+              <SocialLink
+                key={s.name}
+                name={s.name}
+                link={s.link}
+                width="35px"
+              />
             ))}
           </div>
         </div>
@@ -53,10 +45,7 @@ function UserPage() {
           <div>
             <div className="d-flex">
               <div className="fs-2">{member.name}</div>
-              <FavoriteButton
-                status={isFavorite}
-                onClick={() => handleFavorite()}
-              />
+              <FavoriteButton nick={nick} />
             </div>
             <div className="fs-5 mb-3">{`${getAge(member.age)}`}</div>
             <div>
@@ -64,7 +53,7 @@ function UserPage() {
                 <Badge key={i} color={b.color} content={b.label} />
               ))}
             </div>
-            <div className="fs-4 my-3">{member.about}</div>
+            <div className="fs-5 my-3 text-justify">{member.about}</div>
             <div>
               <p className="fs-5 fw-bold m-0">Владение технологиями:</p>
               {member.technologies.map((t) => (
@@ -74,8 +63,21 @@ function UserPage() {
           </div>
         </div>
       </div>
+      <div className="fs-5 mt-4">
+        <p className="p-0">
+          При работе над данным проектом принимал участие в разработке следующих
+          компонентов и модулей:
+        </p>
+        {member.components.map((m) => (
+          <p key={m.name}>
+            <i className="bi bi-check"></i>
+            <span className="fw-bold mx-2">{m.name}</span>-{" "}
+            <span>{m.text}</span>
+          </p>
+        ))}
+      </div>
     </div>
   );
 }
 
-export default UserPage;
+export default MemberPage;

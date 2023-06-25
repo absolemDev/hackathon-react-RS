@@ -44,10 +44,5 @@ export const getTeamMember = (nick) => (state) => {
     return state.members.find((m) => m.nick === nick);
   }
 };
-export const getFavoriteTeamMembers = (nicks) => (state) => {
-  if (state.members) {
-    return state.members.filter((m) => nicks.includes(m.nick));
-  }
-};
 
 export default teamReducer;

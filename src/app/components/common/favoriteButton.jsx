@@ -1,15 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
+import localStorageService from "../../services/localStorage.service";
 
-const FavoriteButton = ({ status, ...rest }) => {
+const FavoriteButton = ({ nick }) => {
+  const favorites = JSON.parse(localStorageService.getFavorites()) || [];
+  const [isFavorite, setIsFavorite] = useState(favorites.includes(nick));
+  const handleFavorite = () => {
+    if (favorites.includes(nick)) {
+      localStorageService.removeFavorite(nick);
+      setIsFavorite(false);
+    } else {
+      localStorageService.setFavorite(nick);
+      setIsFavorite(true);
+    }
+  };
+
   return (
-    <button className="ms-3 btn btn-outline-light" {...rest}>
-      <i className={"bi bi-star" + (status ? "-fill" : "")}></i>
-    </button>
+    <>
+      <button className="ms-3 btn btn-outline-light" onClick={handleFavorite}>
+        <i className={"bi bi-star" + (isFavorite ? "-fill" : "")}></i>
+      </button>
+    </>
   );
 };
+
 FavoriteButton.propTypes = {
-  status: PropTypes.bool
+  nick: PropTypes.string
 };
 
 export default FavoriteButton;
